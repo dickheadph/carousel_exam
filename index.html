@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Carousel</title>
+        <style>
+          .nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 5% 0 5%;
+          }
+          .body {
+            background-color: antiquewhite;
+            padding: 5%;
+          }
+          .title {
+            text-align: center;
+            padding-right: 5%;
+          }
+          .carousel {
+            width: 100%;
+            white-space: nowrap;
+          }
+    
+          .carousel img {
+            display: inline-block;
+            width: 100%;
+            height: 90%;
+            vertical-align: top;
+          }
+        </style>
+      </head>
+      <body class="body">
+        <nav class="nav">
+          <h1 class="title">My Carousel</h1>
+          <h1 class="title">Dogs</h1>
+        </nav>
+        <div class="carousel">
+          <img
+            alt="First"
+            src="https://media.istockphoto.com/id/1328887289/photo/happy-dog.jpg?b=1&s=170667a&w=0&k=20&c=mp3L73BC14QUuk1EQaYtZ1-wwJRW9HAffcsGZNyMy_o=" />
+          <img
+            alt="Second"
+            src="https://media.istockphoto.com/id/1415809177/photo/boxer-puppy-relaxing-on-the-sofa.jpg?b=1&s=170667a&w=0&k=20&c=gNth1Bxjwy1U0Szj5yYNuTMgFNju_TasS7o7mRoMR5A=" />
+          <img
+            alt="Third"
+            src="https://media.istockphoto.com/id/1410966682/photo/four-dogs-in-the-forest.jpg?b=1&s=170667a&w=0&k=20&c=b0rENjSTTS7sOlYIzGYGNBPIJgRmefgKoi4SQwwY3cQ=" />
+          <img
+            alt="Fourth"
+            src="https://media.istockphoto.com/id/1366305001/photo/a-dog-in-a-bunny-costume-sitting-on-a-pink-background-golden-retriever-celebrating-easter-and.jpg?b=1&s=170667a&w=0&k=20&c=und11hpyMyUEsDFn77MsCpCf--YAeBhIN0YCNmELmdc=" />
+          <img
+            alt="Fifth"
+            src="https://media.istockphoto.com/id/1387718984/photo/dachshund-dog-riding-in-car-and-looking-out-from-car-window-happy-dog-enjoying-life-dog.jpg?b=1&s=170667a&w=0&k=20&c=JKPWeo0O5HC0kQTHC3Ux_PEG3K64oT-AcLg6TP5pMFQ=" />
+        </div>
+        <script>
+          const carousel = document.querySelector('.carousel');
+          const images = carousel.querySelectorAll('img');
+          const imageWidth = images[0].clientWidth;
+    
+          let imageIndex = 0;
+    
+          setInterval(() => {
+            imageIndex++;
+            if (imageIndex >= images.length) {
+              imageIndex = 0;
+            }
+            carousel.style.transform = `translateX(-${imageIndex * imageWidth}px)`;
+            //console.log(imageIndex);
+          }, 3000);
+        </script>
+      </body>
+</html>
